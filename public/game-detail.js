@@ -30,6 +30,7 @@ window.onload = function () {
                 document.querySelector('.table').appendChild(tr);
                 for (let j = 0; j < 4; j++) {
                     document.querySelector(`#${j}${i}`).addEventListener('input', function (event) {
+                        let ketquamoi=document.querySelector(`#${j}${i}`).value;
                         const player = i;
                         const round = j;
                         fetch(`/update`, {
@@ -41,7 +42,7 @@ window.onload = function () {
                                 id: gameId,
                                 player: player,
                                 round: round,
-
+                                ketuqamoi: ketquamoi,
                             })
                         
                         })
