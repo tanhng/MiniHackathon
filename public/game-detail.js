@@ -16,6 +16,20 @@ window.onload=function(){
         document.querySelector('#player2').innerHTML=player2;
         document.querySelector('#player3').innerHTML=player3;
         document.querySelector('#player4').innerHTML=player4;
+
+        const addRoundBtn=document.querySelector('#addRoundBtn');
+        var i = 0;
+        addRoundBtn.addEventListener('click',function(event){
+            i++;
+            var tr = document.createElement("TR");
+            tr.innerHTML = `<th scope="row">1</th>
+            <td><input type='number' value=0 id="1${i}"></td>
+            <td><input type='number' value=0 id="2${i}"></td>
+            <td><input type='number' value=0 id="3${i}"> </td>
+            <td><input type='number' value=0 id="4${i}"> </td>`
+            document.querySelector('.table').appendChild(tr);
+        })
+
     })
     .catch((error)=>{
         console.log(error);
